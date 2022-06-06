@@ -18,7 +18,7 @@ function Symbol(x, y, fontSize, canvasHeight) {
     );
     context.fillStyle = "green";
     context.fillText(this.text, this.x * this.fontSize, this.y * this.fontSize);
-    if (this.y * this.fontSize > this.canvasHeight) {
+    if (this.y * this.fontSize > this.canvasHeight && Math.random() > 0.9) {
       this.y = 0;
     } else {
       this.y += 1;
@@ -44,6 +44,8 @@ function Effect(canvasWidth, canvasHeight) {
 const effect = new Effect(canvas.width, canvas.height);
 
 function animate() {
+  ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.font = effect.fontSize + "px monospace";
   effect.symbols.forEach((symbol) => symbol.draw(ctx));
   requestAnimationFrame(animate);
