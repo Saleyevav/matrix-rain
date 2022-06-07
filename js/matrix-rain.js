@@ -1,8 +1,8 @@
 "use strict";
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = canvas.clientWidth;
+canvas.height = canvas.clientHeight;
 let gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
 gradient.addColorStop(0, "red");
 gradient.addColorStop(0.2, "yellow");
@@ -14,6 +14,7 @@ gradient.addColorStop(1, "magenta");
 function Symbol(x, y, fontSize, canvasHeight) {
   this.characters =
     "アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
   this.x = x;
   this.y = y;
   this.fontSize = fontSize;
