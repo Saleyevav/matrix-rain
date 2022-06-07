@@ -80,7 +80,7 @@ function animate(timeStamp) {
 animate(0);
 
 window.addEventListener("resize", function () {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.width = canvas.clientWidth;
+  canvas.height = canvas.clientHeight;
   effect.resize(canvas.width, canvas.height);
 });
