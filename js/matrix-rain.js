@@ -81,6 +81,11 @@ const matrixRain = (function () {
     const fps = options.fps;
     const nextFrame = 1000 / fps;
     let timer = 0;
+    window.addEventListener("resize", function () {
+      canvas.width = canvas.clientWidth;
+      canvas.height = canvas.clientHeight;
+      effect.resize(canvas.width, canvas.height);
+    });
     function animate(timeStamp) {
       const deltaTime = timeStamp - lastTime;
       lastTime = timeStamp;
@@ -104,6 +109,6 @@ const matrixRain = (function () {
   };
 })();
 
-const instance = matrixRain("canvas1");
+const matrix = matrixRain("canvas1");
 
-instance();
+matrix();
