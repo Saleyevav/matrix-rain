@@ -99,7 +99,3 @@ const matrixRain = (function () {
     };
   };
 })();
-
-const matrix = matrixRain("canvas1", { color: "red" });
-
-matrix();
