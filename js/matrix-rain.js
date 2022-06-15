@@ -1,3 +1,9 @@
+/**Matrix-rain v1.0.0
+ *Developed by Alexandr Saleyev
+ *email: saleyevav@yandex.ru
+ *15.06.2022
+ */
+
 "use strict";
 const matrixRain = (function () {
   const defaultOptions = { fontSize: 24, fps: 60, color: "green" };
