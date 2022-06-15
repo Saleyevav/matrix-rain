@@ -1,6 +1,6 @@
 "use strict";
 const matrixRain = (function () {
-  const defaultOptions = { fontSize: 24, fps: 60 };
+  const defaultOptions = { fontSize: 24, fps: 60, color: "green" };
 
   function Symbol(x, y, fontSize, canvasHeight, color) {
     this.characters =
@@ -62,15 +62,6 @@ const matrixRain = (function () {
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
 
-    let gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, "red");
-    gradient.addColorStop(0.2, "yellow");
-    gradient.addColorStop(0.4, "green");
-    gradient.addColorStop(0.6, "cyan");
-    gradient.addColorStop(0.8, "blue");
-    gradient.addColorStop(1, "magenta");
-    defaultOptions.color = gradient;
-
     const options = {
       ...defaultOptions,
       ...clientOptions,
@@ -109,6 +100,6 @@ const matrixRain = (function () {
   };
 })();
 
-const matrix = matrixRain("canvas1");
+const matrix = matrixRain("canvas1", { color: "red" });
 
 matrix();
